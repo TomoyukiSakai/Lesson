@@ -1,0 +1,52 @@
+/*saasを使っている場合は、上書きされるので、cssは直接修正しないこと*/
+
+$cWhite: white;
+$cBlack: black;
+
+#container{
+    text-align: center;
+}
+.btn {
+    background-color: $cWhite;
+    color: $cBlack;
+    border: 2px solid $cBlack;
+    padding: 10px 40px;
+    margin:10px 40px;
+    /*100~900, default=500*/
+    font-weight: 600;
+    cursor: pointer;
+    /*hoverの変化の秒数を制御。0.3秒後に0.3秒かけて変化*/
+    transition: all 0.3s;
+
+    /*半角スペースを開けたくないので、＆は省略不能*/
+    /*半角スペースを開ける場合は、省略可能*/
+
+    /*
+    &:hover{
+        background-color: $cBlack;
+        color:$cWhite;
+    }
+    */
+
+    &.float {
+        &:hover{
+            box-shadow:5px 5px 10px 0px  rgba(0,0,0,0.5);
+        }
+    }
+
+    &.letter-spacing{
+        //擬似要素はimgなどのからタグでは使えない。
+        &:hover{
+            background-color:black;
+            letter-spacing: 3px;
+            color: white;
+        }
+    }
+
+    &.shadow{
+        &:hover{
+            transform: translate(-0.25px, -2.5px);
+            box-shadow: 5px 5px 0 0 black;
+        }
+    }
+}
