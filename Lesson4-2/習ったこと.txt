@@ -1,0 +1,1 @@
+DOMツリー読み込み完了→DOMContentLoaded発火→画像・CSS読み込み完了→load発火
