@@ -1,0 +1,44 @@
+header {
+  display: flex;
+}
+
+#parent {
+  display: flex;
+}
+
+#side {
+  width: 300 px;
+}
+body.top #side {
+  display: none;
+}
+
+.header_icon {
+  border: 5px solid;
+  padding: 10px;
+  display: inline-block;
+}
+.header_icon.changing:hover {
+  box-shadow: 0 0 10px black;
+  transform: rotate(30deg);
+}
+
+.card_area_A {
+  display: flex;
+}
+.card_area_A .card_parent {
+  width: 20vw;
+  margin: 10px;
+  padding: 5px;
+}
+.card_area_A .card_parent .card_title {
+  width: 100%;
+}
+.card_area_A .card_parent .card_body {
+  width: 100%;
+}
+
+#header_nav {
+  display: flex;
+  list-style: none;
+}/*# sourceMappingURL=main.css.map */

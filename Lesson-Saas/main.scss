@@ -1,0 +1,55 @@
+header{
+    display: flex;
+}
+
+#parent{
+    display:flex;
+}
+
+
+#side{
+    width:300 px;
+    body.top & {
+        display:none;
+    }
+}
+
+.header_icon{
+    border:5px solid;
+    padding:10px;
+    display:inline-block;
+    &.changing{
+        &:hover{
+            box-shadow: 0 0 10px black;
+            transform: rotate(30deg);
+        }
+    }
+}
+
+
+@mixin cards_area ($bg_color:white, $char_color: black, $margin_size:10px,$padding_size:5px, $width_size:10vw) {   
+    display: flex;
+    .card_parent{
+        width:$width_size;
+        margin: $margin_size;
+        padding: $padding_size;
+        .card_title{
+            width:100%;
+        
+        }
+        .card_body{
+            width:100%;
+            
+        }
+    };
+    
+}
+
+.card_area_A{
+    @include cards_area($width_size:20vw);
+}
+
+#header_nav{
+    display: flex;
+    list-style: none;
+}
