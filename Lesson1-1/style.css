@@ -1,5 +1,9 @@
 @charset "UTF-8";
 /*saasを使っている場合は、上書きされるので、cssは直接修正しないこと*/
+body {
+  background-image: url();
+}
+
 #container {
   text-align: center;
 }

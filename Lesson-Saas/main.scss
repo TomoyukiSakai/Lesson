@@ -1,29 +1,45 @@
+body{
+    margin:0;
+    padding:0;
+    background-color: #800000;
+    color:white;
+    
+}
+#side{
+    width: 50vw;
+}
+
 header{
     display: flex;
+    align-items: center;
 }
 
 #parent{
     display:flex;
 }
 
+#main{
+    flex-grow:1;
+}
 
 #side{
-    width:300 px;
-    body.top & {
-        display:none;
-    }
+    flex-grow:1;
 }
+
 
 .header_icon{
     border:5px solid;
     padding:10px;
     display:inline-block;
+    background-color: black;
+    color:white;
     &.changing{
         &:hover{
             box-shadow: 0 0 10px black;
             transform: rotate(30deg);
         }
     }
+    
 }
 
 
@@ -39,7 +55,7 @@ header{
         }
         .card_body{
             width:100%;
-            
+            background-color: purple;
         }
     };
     
@@ -52,4 +68,52 @@ header{
 #header_nav{
     display: flex;
     list-style: none;
+    transition: all 0.3s;
+
+    li{
+        margin-right:10px;
+        padding:10px;
+        border: 1px solid;
+
+        &.slide-bg{
+            position:relative;
+            overflow: hidden;
+            z-index :1;
+            & span{
+                
+                display: inline-block;
+                width:100%;
+                height:100%;
+                background-color: black;
+                position:absolute;
+                top:0;
+                left:0;
+                transform: translateX(-100%);
+                transition: transform 0.3s;
+                z-index: -1;
+                
+            }
+            
+            &:hover{
+                & a{
+                    color:white;   
+                }
+                      
+                & span{
+                    transform: none;
+                    
+                }
+            }
+        }
+
+        
+    }
 }
+
+h2{
+    display: inline-block;
+    border-bottom:10px solid;
+    border-color: white ;
+    color:white;
+}
+

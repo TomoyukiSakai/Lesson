@@ -1,22 +1,37 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #800000;
+  color: white;
+}
+
+#side {
+  width: 50vw;
+}
+
 header {
   display: flex;
+  align-items: center;
 }
 
 #parent {
   display: flex;
 }
 
-#side {
-  width: 300 px;
+#main {
+  flex-grow: 1;
 }
-body.top #side {
-  display: none;
+
+#side {
+  flex-grow: 1;
 }
 
 .header_icon {
   border: 5px solid;
   padding: 10px;
   display: inline-block;
+  background-color: black;
+  color: white;
 }
 .header_icon.changing:hover {
   box-shadow: 0 0 10px black;
@@ -36,9 +51,46 @@ body.top #side {
 }
 .card_area_A .card_parent .card_body {
   width: 100%;
+  background-color: purple;
 }
 
 #header_nav {
   display: flex;
   list-style: none;
+  transition: all 0.3s;
+}
+#header_nav li {
+  margin-right: 10px;
+  padding: 10px;
+  border: 1px solid;
+}
+#header_nav li.slide-bg {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+#header_nav li.slide-bg span {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+  z-index: -1;
+}
+#header_nav li.slide-bg:hover a {
+  color: white;
+}
+#header_nav li.slide-bg:hover span {
+  transform: none;
+}
+
+h2 {
+  display: inline-block;
+  border-bottom: 10px solid;
+  border-color: white;
+  color: white;
 }/*# sourceMappingURL=main.css.map */
