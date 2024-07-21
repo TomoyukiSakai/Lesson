@@ -1,17 +1,79 @@
+@charset "UTF-8";
+#top .card_parent {
+  margin-right: 5vw;
+}
+
 body {
   margin: 0;
   padding: 0;
   background-color: #800000;
   color: white;
+  font-family: "ヒラギノ角ゴシック", "Hiragino Sans", "メイリオ", Meiryo, "Arial", sans-serif;
 }
 
-#side {
-  width: 50vw;
+.cover-slide {
+  position: relative;
+}
+.cover-slide img {
+  width: 100%;
+  overflow: hidden;
+}
+.cover-slide::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.cover-slide.inview::after {
+  animation-name: kf-cover-slide;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 
+.img_zoom {
+  opacity: 0;
+}
+.inview .img_zoom {
+  opacity: 1;
+  animation-name: kf-img-show;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes kf-cover-slide {
+  0% {
+    left: 0;
+    right: 100%;
+  }
+  50% {
+    left: 25%;
+    right: 50%;
+  }
+  100% {
+    left: 100%;
+    right: 0;
+  }
+}
+@keyframes kf-img-show {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 header {
   display: flex;
-  align-items: center;
+  align-items: left;
 }
 
 #parent {
@@ -20,10 +82,13 @@ header {
 
 #main {
   flex-grow: 1;
+  box-sizing: content-box;
+  width: 50vw;
 }
 
 #side {
   flex-grow: 1;
+  width: 50vw;
 }
 
 .header_icon {
@@ -42,7 +107,7 @@ header {
   display: flex;
 }
 .card_area_A .card_parent {
-  width: 20vw;
+  width: 50%;
   margin: 10px;
   padding: 5px;
 }
@@ -51,7 +116,20 @@ header {
 }
 .card_area_A .card_parent .card_body {
   width: 100%;
-  background-color: purple;
+  background-color: black;
+  padding: 10px;
+}
+.card_area_A .card_parent .title_image img {
+  width: 50%;
+}
+.card_area_A .card_parent h2 {
+  display: inline-block;
+  border-width: 0px 0px 5px 5px;
+  border-color: white;
+  border-style: solid;
+  color: white;
+  padding: 0;
+  margin: 0;
 }
 
 #header_nav {
@@ -88,9 +166,24 @@ header {
   transform: none;
 }
 
-h2 {
-  display: inline-block;
-  border-bottom: 10px solid;
-  border-color: white;
-  color: white;
+.parent_circle_buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 50%;
+}
+.parent_circle_buttons button.circle {
+  border-radius: 50%;
+  width: 8vw;
+  height: 8vw;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.parent_circle_buttons button.empty {
+  visibility: hidden;
+}
+
+.no {
+  display: none;
 }/*# sourceMappingURL=main.css.map */
